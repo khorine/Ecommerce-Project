@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="{{ '/' }}">HKM E-Shop</a>
+      <a class="navbar-brand" href="{{ '/' }}">H&S Engineering Services</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,7 +22,7 @@
                 <span class="badge badge-pill bg-success wishlist-count">0</span>
             </a>
           </li>
-        
+
         @guest
           @if (Route::has('login'))
               <li class="nav-item">

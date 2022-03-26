@@ -45,10 +45,10 @@ class CheckoutController extends Controller
         $order->pincode = $request->input('pincode');
 
         $order->payment_mode = 'Mpesa';
-        $order->payment_id = 'FGNHUR75v8';     
+        $order->payment_id = 'FGNHUR75v8';
 
         // $order->payment_mode = $request->input('payment_mode');
-        // $order->payment_id = $request->input('payment_id');        
+        // $order->payment_id = $request->input('payment_id');
 
         //To calculate the total price
         $total = 0;
@@ -56,12 +56,12 @@ class CheckoutController extends Controller
         foreach($cartItems_total as $prod)
         {
             $total += $prod->products->selling_price;
-            
+
         }
 
         $order->total_price = $total;
 
-        $order->tracking_no = 'jakim'.rand(1111,9999);
+        $order->tracking_no = 'h&s'.rand(1111,9999);
         $order->save();
 
 
@@ -83,7 +83,7 @@ class CheckoutController extends Controller
         if(Auth::user()->address == null)
         {
             $user = User::where('id', Auth::id())->first();
-            $user->name = $request->input('fname');
+            $user->fname = $request->input('fname');
             $user->lname = $request->input('lname');
             $user->phone = $request->input('phone');
             $user->address = $request->input('address');
@@ -92,7 +92,7 @@ class CheckoutController extends Controller
             $user->city = $request->input('city');
             $user->county = $request->input('county');
             $user->pincode = $request->input('pincode');
-            $user->update();   
+            $user->update();
         }
 
         $cartItems = Cart::where('user_id', Auth::id())->get();
@@ -139,6 +139,6 @@ class CheckoutController extends Controller
             'pincode'=> $pincode,
             'total_price'=> $total_price
         ]);
-    
+
     }
 }

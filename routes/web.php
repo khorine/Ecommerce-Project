@@ -18,6 +18,8 @@ use App\Http\Controllers\Frontend\WishlistController;
 //     return view('welcome');
 // });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/',[FrontendController::class, 'index']);
 Route::get('category',[FrontendController::class, 'category']);
 Route::get('category/{slug}',[FrontendController::class, 'viewcategory']);
@@ -53,15 +55,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('update-review', [ReviewController::class, 'update']);
 
     Route::get('wishlist', [WishlistController::class, 'index']);
-    
+
     Route::post('proceed-to-pay', [CheckoutController::class, 'mpesaCheck']);
 
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard', 'Admin\FrontendController@index'); 
-    
-    Route::get('categories', 'Admin\CategoryController@index'); 
+    Route::get('/dashboard', 'Admin\FrontendController@index');
+
+    Route::get('categories', 'Admin\CategoryController@index');
     Route::get('add-category', 'Admin\CategoryController@add');
     Route::post('insert-category', 'Admin\CategoryController@insert');
     Route::get('edit-category/{id}', [CategoryController::class,'edit']);
@@ -84,7 +86,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);
 
-       
+
 });
 
 

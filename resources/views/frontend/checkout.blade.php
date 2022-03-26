@@ -14,10 +14,10 @@
             </a> /
             <a href="{{ url('checkout') }}">
                 Checkout
-            </a> 
-        </h6> 
-    </div>    
-</div> 
+            </a>
+        </h6>
+    </div>
+</div>
 
 <div class="container mt-3">
     <form action="{{ url('place-order') }}" method="POST">
@@ -31,7 +31,7 @@
                     <div class="row check-out">
                         <div class="col-md-6">
                             <label for="">First Name</label>
-                            <input type="text" name="fname" class="form-control firstname" value="{{ Auth::user()->name }}" placeholder="Enter First Name">
+                            <input type="text" name="fname" class="form-control firstname" value="{{ Auth::user()->fname }}" placeholder="Enter First Name">
                               <span id="fname_error" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-md-6 mt-3">
                             <label for="">Address</label>
-                            <input type="text"class="form-control address" value="{{ Auth::user()->address }}" placeholder="Enter Address">
+                            <input type="text" name="address" class="form-control address" value="{{ Auth::user()->address }}" placeholder="Enter Address">
                             <span id="address_error" class="text-danger"></span>
                         </div>
                         <div class="col-md-6 mt-3">

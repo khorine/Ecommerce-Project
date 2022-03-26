@@ -58,7 +58,7 @@
                                                 <td>{{ $item->price }}</td>
                                                 <td>
                                                     <img src="{{ asset('assets/uploads/products/'.$item->products->image) }}" width="50px" alt="Product Image">
-                                                    
+
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -67,7 +67,7 @@
                                 <h4 class="px-2">Grand Total: <span class="float-end">KSh {{ $orders->total_price }} </span></h4>
                                 <div class="mt-5 px-2">
                                     <label for="">Order Status</label>
-                                    <form action="{{ url('update-order/'.$order->id) }}" method="POST">
+                                    <form action="{{ url('update-order/'.$orders->id) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <select class="form-select" name="order_status">
@@ -79,10 +79,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

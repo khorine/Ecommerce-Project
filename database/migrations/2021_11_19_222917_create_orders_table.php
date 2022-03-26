@@ -27,7 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('county');
             $table->string('pincode');
             $table->string('total_price');
-            $table->string('paymode_mode');
+            $table->string('payment_mode');
             $table->string('payment_id')->nullable();
             $table->tinyInteger('status')->default('0');
             $table->string('message')->nullable();

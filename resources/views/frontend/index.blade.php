@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title')
-Welcome to HKM E-shop 
+E-shop
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@ Welcome to HKM E-shop
         <div class="row">
                 <h5>Featured Products</h5>
                 {{-- <div class="owl-carousel featured-carousel owl-theme"> --}}
-                    
+
                     @foreach ($featured_products as $prod)
                     <div class="col-md-3 mt-3">
                         <a href="{{ url('category/'.$prod->category->slug.'/'.$prod->slug) }}">

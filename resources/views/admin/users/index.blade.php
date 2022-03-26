@@ -25,14 +25,16 @@
                     <td>{{ $user->phone }}</td>
                     <td>
                         <a href="{{ url('view-user/'.$user->id) }}" class="btn btn-primary btn-sm">View</a>
-                        
+
                     </td>
-                </tr> 
+                </tr>
                 @endforeach
-                
+
             </tbody>
         </table>
 
     </div>
 </div>
 @endsection
+
+
